@@ -1,0 +1,120 @@
+/* Importa fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Layout base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Vídeo de fundo */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5) blur(3px);
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Texto e link lado a lado */
+.inline-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    color: #333;
+}
+
+.inline-text a {
+    color: #3772A6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.inline-text a:hover {
+    text-decoration: underline;
+}
+
+/* Input de arquivo (oculto) */
+input[type="file"] {
+    display: none;
+}
+
+/* Estilo customizado do botão de upload */
+.custom-file-upload {
+    display: inline-block;
+    background-color: #E3EAF2;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #1F4373;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #d6e1ed;
+}
+
+.custom-file-upload i {
+    margin-right: 8px;
+}
+
+/* Botão principal */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3772A6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1F4373;
+}
+
+.upload-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Nome do arquivo exibido */
+#file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
