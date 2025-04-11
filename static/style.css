@@ -1,4 +1,3 @@
-/* Importa fonte moderna do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* Layout base */
@@ -22,7 +21,13 @@ body, html {
     filter: brightness(0.5) blur(3px);
 }
 
-/* Container principal */
+/* Centralização apenas na página de upload */
+.centralizado {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Container base */
 .container {
     position: relative;
     z-index: 1;
@@ -34,11 +39,9 @@ body, html {
     width: 90%;
     margin: auto;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
-/* Texto e link lado a lado */
+/* Texto com link */
 .inline-text {
     display: flex;
     justify-content: center;
@@ -59,12 +62,11 @@ body, html {
     text-decoration: underline;
 }
 
-/* Input de arquivo (oculto) */
+/* Upload */
 input[type="file"] {
     display: none;
 }
 
-/* Estilo customizado do botão de upload */
 .custom-file-upload {
     display: inline-block;
     background-color: #E3EAF2;
@@ -81,11 +83,13 @@ input[type="file"] {
     background-color: #d6e1ed;
 }
 
-.custom-file-upload i {
+.upload-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
     margin-right: 8px;
 }
 
-/* Botão principal */
 button {
     width: 100%;
     padding: 12px;
@@ -104,17 +108,128 @@ button:hover {
     background-color: #1F4373;
 }
 
-.upload-icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-/* Nome do arquivo exibido */
 #file-name {
     margin-top: 10px;
     font-size: 14px;
     color: #333;
     font-weight: 500;
+}
+
+/* Galeria com scroll */
+.scroll-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 40px;
+}
+
+.galeria-container {
+    max-width: 900px;
+    padding-bottom: 100px;
+}
+
+.gallery-bottom-padding {
+    height: 60px;
+}
+
+/* Navegação */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #3772A6;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Galeria */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: center;
+}
+
+.image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filename {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.button-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #3772A6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #1F4373;
+}
+
+.detalhe-container {
+    max-width: 1000px;
+    padding-bottom: 60px;
+}
+
+.imagem-completa {
+    margin-top: 20px;
+}
+
+.imagem-full {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin: 10px 0 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.info-imagem {
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.flash-message {
+    background-color: #D1E7DD;
+    color: #0F5132;
+    border: 1px solid #BADBCC;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }

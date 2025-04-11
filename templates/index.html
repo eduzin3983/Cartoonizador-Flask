@@ -15,24 +15,32 @@
     </video>
 
     <!-- Conteúdo -->
-    <div class="container">
+    <div class="container centralizado">
         <h2>Faça o Upload de uma Imagem!</h2>
 
         <p class="inline-text">
             Acesse as imagens já gravadas!
-            <a href="/imagens">Acesse Aqui!</a>
+            <a href="/image">Acesse Aqui!</a>
         </p>
         
         <form action="/upload" method="post" enctype="multipart/form-data">
-            <!-- Botão de upload com ícone local -->
+            <!-- Botão de upload com ícone -->
             <label for="file-upload" class="custom-file-upload">
                 <img src="/static/icons/upload.png" alt="Upload" class="upload-icon">
                 Escolher imagem
             </label>
-            <input id="file-upload" type="file" name="imagem" accept="image/*" />
+            <input id="file-upload" type="file" name="image" accept="image/*" />
 
-            <!-- Nome do arquivo aparece aqui -->
+            <!-- Nome do arquivo -->
             <p id="file-name"></p>
+            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-message">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
 
             <button type="submit">Enviar</button>
         </form>

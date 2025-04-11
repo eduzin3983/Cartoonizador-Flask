@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Vídeo de fundo -->
+    <video autoplay muted loop playsinline preload="auto" class="bg-video">
+        <source src="/static/fundo/background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Conteúdo com rolagem -->
+    <div class="scroll-wrapper">
+        <div class="container galeria-container">
+            <h2>Galeria de Imagens Enviadas</h2>
+            <a href="/" class="back-link">⬅ Voltar para Upload</a>
+
+            <div class="grid">
+                {% for img in imagens %}
+                    <div class="image-card">
+                        <p class="filename">{{ img.filename }}</p>
+                        <img src="{{ img.image_url }}" alt="Imagem Original">
+                        <a href="/image/{{ img.filename }}" class="button-link">
+                            Ver imagem processada
+                        </a>
+                    </div>
+                {% else %}
+                    <p>Nenhuma imagem foi enviada ainda.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="gallery-bottom-padding"></div>
+    </div>
+
+</body>
+</html>
