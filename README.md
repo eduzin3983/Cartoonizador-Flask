@@ -131,8 +131,9 @@ http://localhost:5000
 .  
 ├── app.py                  # Main Flask application  
 ├── requirements.txt        # Python dependencies  
-├── uploads/                # Original uploaded images  
-├── cartooned/              # Processed cartoonized images  
+├── database.db             # SQLite database (auto-generated)
+├── uploads/                # Original uploaded images (auto-generated)
+├── cartooned/              # Processed cartoonized images (auto-generated)
 ├── static/                 # Static assets  
 │   ├── style.css  
 │   └── background/              
@@ -147,11 +148,11 @@ http://localhost:5000
 
 ---
 
-## 📸 Interface
+## 📸 Interface Overview
 
-- Home page with upload button
-- Image gallery with "View processed image" button
-- Details page with original image, cartoonized image, and metadata
+- **Home Page**: Upload form with file input and submit button  
+- **Gallery Page**: Displays a grid of uploaded images with preview buttons  
+- **Details Page**: Shows the original and cartoonized versions side by side, along with image metadata (filename, upload date, etc.)
 
 ---
 
