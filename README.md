@@ -13,13 +13,14 @@ This project is a web application that allows users to:
 
 This project was developed as a practical part of the course **"Introduction to Cloud Computing"**, offered by **AiotLab / PUC-Campinas** 🎓.
 
-Additionally, this project served as a practical opportunity to **develop and implement REST APIs with Flask**, as well as to **host the application in the cloud**. The main practices covered include:
+It also served as an opportunity to apply knowledge of **REST API development with Flask** and to gain experience deploying applications to cloud environments. Key practices covered include:
 
-- File upload via POST requests  
-- Redirection with flash messages for user feedback  
-- Route configuration with dynamic parameters for greater flexibility  
-- Returning static files and dynamically rendered HTML pages  
-- Integration and execution in cloud environments for scalability and accessibility  
+- Handling file uploads via POST requests  
+- Configuring dynamic routes  
+- Serving static files and rendering HTML templates  
+- Containerizing the application using Docker for portability and consistency 
+- Running the application in isolated environments using Docker containers  
+- Preparing the project for deployment in cloud infrastructure (e.g., AWS, Azure, etc.)
 
 ---
 
@@ -49,29 +50,64 @@ Additionally, this project served as a practical opportunity to **develop and im
 ---
 
 ## 🛠️ How to Run Locally
-
+### 1. Clone the repository
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/cartoonizer-flask.git
-cd cartoonizer-flask
+git clone https://github.com/eduzin3983/Flask-Cartoonizer.git
 ```
 ```bash
-# 2. Create and activate a virtual environment
+cd Flask-Cartoonizer/
+```
+### 2. Create and activate a virtual environment
+```bash
 python -m venv .venv
-source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+```
+```bash
+source venv/bin/activate  # On Linux/Mac
+```
+```bash
+venv\Scripts\activate   # On Windows
 ```
 
+### 3. Install dependencies
 ```bash
-# 3. Install dependencies
 pip install -r requirements.txt
 ```
+### 4. Start the server
 ```bash
-# 4. Start the server
 python app.py
 ```
 
+### 5. Access in your browser:
 ```bash
-# 5. Access in your browser:
+http://localhost:5000
+```
+
+---
+
+# 🐳 Docker Setup
+
+> If you prefer running the project inside a Docker container, follow the steps below:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/eduzin3983/Flask-Cartoonizer.git
+```
+```bash
+cd Flask-Cartoonizer/
+```
+
+### 2. Build the Docker Image
+```bash
+docker build -t flask-cartoonizer .
+```
+
+### 3. Run the Docker Container
+```bash
+docker run --rm -p 5000:5000 --name cartoonizer-app flask-cartoonizer
+```
+
+### 5. Access in your browser:
+```bash
 http://localhost:5000
 ```
 
@@ -83,6 +119,7 @@ http://localhost:5000
 - [Flask](https://flask.palletsprojects.com/)
 - [OpenCV](https://opencv.org/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Docker](https://www.docker.com/)
 - HTML5, CSS3, JavaScript
 - Local SQLite database
 
@@ -92,17 +129,19 @@ http://localhost:5000
 
 ```
 .  
-├── app.py                  # Main application file  
-├── database.db             # SQLite database  
-├── uploads/                # Original images  
-├── cartooned/              # Cartoonized images  
-├── static/                 # Static files  
-│   ├── style.css           # CSS styles  
-│   └── fundo/              # Background resources  
+├── app.py                  # Main Flask application  
+├── requirements.txt        # Python dependencies  
+├── uploads/                # Original uploaded images  
+├── cartooned/              # Processed cartoonized images  
+├── static/                 # Static assets  
+│   ├── style.css  
+│   └── background/              
 ├── templates/              # HTML templates  
-│   ├── index.html          # Home page  
-│   ├── galeria.html        # Gallery page  
-│   └── detalhe_imagem.html # Image details page  
+│   ├── index.html  
+│   ├── gallery.html  
+│   └── image_detail.html  
+├── .dockerignore           # Docker context exclusions  
+├── Dockerfile              # Docker build instructions  
 └── README.md               # Project documentation
 ```
 
