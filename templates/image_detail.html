@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ image.filename }} - Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Background video -->
+    <video autoplay muted loop playsinline preload="auto" class="bg-video">
+        <source src="/static/background/background.mp4" type="video/mp4">
+        Your browser does not support HTML5 videos.
+    </video>
+
+    <div class="scroll-wrapper">
+        <div class="container detalhe-container">
+            <h2>Image Details</h2>
+            <a href="/image" class="back-link">⬅ Back to Gallery</a>
+
+            <div class="image-margin">
+                <h3>Original Image</h3>
+                <img src="{{ image.image_url }}" alt="Original" class="image-full">
+
+                <h3>Image with Filter</h3>
+                <img src="{{ image.cartoon_url }}" alt="Cartoonized" class="image-full">
+            </div>
+
+            <div class="info-image">
+                <p><strong>Filename:</strong> {{ image.filename }}</p>
+                <p><strong>Upload Date:</strong> {{ image.timestamp }}</p>
+                <p><strong>Original URL:</strong> <a href="{{ image.image_url }}" target="_blank">{{ image.image_url }}</a></p>
+                <p><strong>Processed URL:</strong> <a href="{{ image.cartoon_url }}" target="_blank">{{ image.cartoon_url }}</a></p>
+            </div>
+        </div>
+
+        <div class="gallery-bottom-padding"></div>
+    </div>
+</body>
+</html>

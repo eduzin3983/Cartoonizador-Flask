@@ -1,122 +1,122 @@
-# 🖼️ Cartoonizador de Imagens com Flask + OpenCV
+# 🖼️ Image Cartoonizer with Flask + OpenCV
 
-Este projeto é uma aplicação web que permite aos usuários:  
-- Fazer upload de uma imagem 📤  
-- Gerar uma versão cartoonizada em preto e branco 🖌️  
-- Visualizar uma galeria de imagens enviadas 🖼️  
-- Acessar detalhes de cada imagem (data, URLs, etc.)
+This project is a web application that allows users to:  
+- Upload an image 📤  
+- Generate a black-and-white cartoonized version 🖌️  
+- View a gallery of uploaded images 🖼️  
+- Access details of each image (date, URLs, etc.)
 
 ---
 
-## 📚 Projeto Prático — *Introdução à Nuvem*  
+## 📚 Practical Project — *Introduction to Cloud Computing*  
 **AiotLab — PUC-Campinas**
 
-Este projeto foi desenvolvido como parte prática do curso **"Introdução à Nuvem"**, oferecido pela **AiotLab / PUC-Campinas** 🎓.
+This project was developed as a practical part of the course **"Introduction to Cloud Computing"**, offered by **AiotLab / PUC-Campinas** 🎓.
 
-Além disso, este projeto serviu como uma oportunidade prática para **desenvolver e implementar APIs REST com Flask**, bem como para **hospedar a aplicação na nuvem**. As principais práticas abordadas incluem:
+Additionally, this project served as a practical opportunity to **develop and implement REST APIs with Flask**, as well as to **host the application in the cloud**. The main practices covered include:
 
-- Upload de arquivos via requisições POST  
-- Redirecionamento com mensagens flash para feedback ao usuário  
-- Configuração de rotas com parâmetros dinâmicos para maior flexibilidade  
-- Retorno de arquivos estáticos e páginas HTML renderizadas dinamicamente  
-- Integração e execução em ambientes de nuvem para escalabilidade e acessibilidade  
-
----
-
-## 🚀 Funcionalidades
-
-✅ Upload de imagens (.jpg, .png, .jpeg...)  
-✅ Detecção automática de nomes duplicados  
-✅ Aplicação de filtro estilo cartoon em preto e branco  
-✅ Visualização em galeria  
-✅ Detalhes individuais para cada imagem  
-✅ Registro de dados
-✅ Layout responsivo com fundo animado (vídeo)
+- File upload via POST requests  
+- Redirection with flash messages for user feedback  
+- Route configuration with dynamic parameters for greater flexibility  
+- Returning static files and dynamically rendered HTML pages  
+- Integration and execution in cloud environments for scalability and accessibility  
 
 ---
 
-## 🌐 Rotas da Aplicação
+## 🚀 Features
 
-| Rota                    | Método | Função                                                               |
-|-------------------------|--------|----------------------------------------------------------------------|
-| `/`                     | GET    | Página inicial com formulário de upload                             |
-| `/upload`               | POST   | Recebe a imagem, processa, salva e redireciona com mensagem flash   |
-| `/imagens`              | GET    | Exibe uma galeria de imagens enviadas                               |
-| `/image/<filename>`     | GET    | Página de detalhes da imagem original e cartoonizada                |
-| `/uploads/<filename>`   | GET    | Serve a imagem original diretamente                                 |
-| `/cartooned/<filename>` | GET    | Serve a imagem cartoonizada diretamente                             |
+✅ Image upload (.jpg, .png, .jpeg...)  
+✅ Automatic detection of duplicate names  
+✅ Application of black-and-white cartoon-style filter  
+✅ Gallery view  
+✅ Individual details for each image  
+✅ Data logging  
+✅ Responsive layout with animated background (video)
 
 ---
 
-## 🛠️ Como Executar Localmente
+## 🌐 Application Routes
+
+| Route                   | Method | Function                                                               |
+|-------------------------|--------|------------------------------------------------------------------------|
+| `/`                     | GET    | Home page with upload form                                             |
+| `/upload`               | POST   | Receives the image, processes it, saves it, and redirects with a flash message |
+| `/imagens`              | GET    | Displays a gallery of uploaded images                                  |
+| `/image/<filename>`     | GET    | Details page for the original and cartoonized image                    |
+| `/uploads/<filename>`   | GET    | Serves the original image directly                                     |
+| `/cartooned/<filename>` | GET    | Serves the cartoonized image directly                                  |
+
+---
+
+## 🛠️ How to Run Locally
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone the repository
 git clone https://github.com/your-username/cartoonizer-flask.git
 cd cartoonizer-flask
 ```
 ```bash
-# 2. Crie e ative um ambiente virtual
+# 2. Create and activate a virtual environment
 python -m venv .venv
-source .venv/bin/activate  # No Windows use: .venv\Scripts\activate
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 ```
 
 ```bash
-# 3. Instale as dependências
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 ```bash
-# 4. Inicie o servidor
+# 4. Start the server
 python app.py
 ```
 
 ```bash
-# 5. Acesse no navegador:
+# 5. Access in your browser:
 http://localhost:5000
 ```
 
 ---
 
-## 🧪 Tecnologias Utilizadas
+## 🧪 Technologies Used
 
 - [Python 3](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/)
 - [OpenCV](https://opencv.org/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - HTML5, CSS3, JavaScript
-- Banco de dados SQLite local
+- Local SQLite database
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
 ```
 .  
-├── app.py                  # Arquivo principal da aplicação  
-├── database.db             # Banco de dados SQLite  
-├── uploads/                # Imagens originais  
-├── cartooned/              # Imagens cartoonizadas  
-├── static/                 # Arquivos estáticos  
-│   ├── style.css           # Estilos CSS  
-│   └── fundo/              # Recursos de fundo  
-├── templates/              # Templates HTML  
-│   ├── index.html          # Página inicial  
-│   ├── galeria.html        # Página da galeria  
-│   └── detalhe_imagem.html # Página de detalhes da imagem  
-└── README.md               # Documentação do projeto
+├── app.py                  # Main application file  
+├── database.db             # SQLite database  
+├── uploads/                # Original images  
+├── cartooned/              # Cartoonized images  
+├── static/                 # Static files  
+│   ├── style.css           # CSS styles  
+│   └── fundo/              # Background resources  
+├── templates/              # HTML templates  
+│   ├── index.html          # Home page  
+│   ├── galeria.html        # Gallery page  
+│   └── detalhe_imagem.html # Image details page  
+└── README.md               # Project documentation
 ```
 
 ---
 
 ## 📸 Interface
 
-- Página inicial com botão de upload
-- Galeria de imagens com botão "Ver imagem processada"
-- Página de detalhes com imagem original, imagem cartoonizada e metadados
+- Home page with upload button
+- Image gallery with "View processed image" button
+- Details page with original image, cartoonized image, and metadata
 
 ---
 
-## 📬 Contato
+## 📬 Contact
 
-Para dúvidas ou sugestões, sinta-se à vontade para abrir uma issue ou entrar em contato.  
-Se quiser contribuir, será muito bem-vindo! 🤝
+For questions or suggestions, feel free to open an issue or get in touch.  
+If you'd like to contribute, you are very welcome! 🤝

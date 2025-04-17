@@ -201,11 +201,11 @@ button:hover {
     padding-bottom: 60px;
 }
 
-.imagem-completa {
+.image-margin {
     margin-top: 20px;
 }
 
-.imagem-full {
+.image-full {
     width: 100%;
     max-width: 800px;
     border-radius: 10px;
@@ -213,7 +213,7 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.info-imagem {
+.info-image {
     text-align: left;
     font-size: 15px;
     color: #333;

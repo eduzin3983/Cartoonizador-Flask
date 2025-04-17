@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Galeria</title>
+    <title>Gallery</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-    <!-- Vídeo de fundo -->
+    <!-- Background video -->
     <video autoplay muted loop playsinline preload="auto" class="bg-video">
-        <source src="/static/fundo/background.mp4" type="video/mp4">
+        <source src="/static/background/background.mp4" type="video/mp4">
+        Your browser does not support HTML5 videos.
     </video>
 
-    <!-- Conteúdo com rolagem -->
+    <!-- Scrollable content -->
     <div class="scroll-wrapper">
         <div class="container galeria-container">
-            <h2>Galeria de Imagens Enviadas</h2>
-            <a href="/" class="back-link">⬅ Voltar para Upload</a>
+            <h2>Uploaded Image Gallery</h2>
+            <a href="/" class="back-link">⬅ Back to Upload</a>
 
             <div class="grid">
                 {% for img in imagens %}
                     <div class="image-card">
                         <p class="filename">{{ img.filename }}</p>
-                        <img src="{{ img.image_url }}" alt="Imagem Original">
+                        <img src="{{ img.image_url }}" alt="Original Image">
                         <a href="/image/{{ img.filename }}" class="button-link">
-                            Ver imagem processada
+                            View Processed Image
                         </a>
                     </div>
                 {% else %}
-                    <p>Nenhuma imagem foi enviada ainda.</p>
+                    <p>No images have been uploaded yet.</p>
                 {% endfor %}
             </div>
         </div>

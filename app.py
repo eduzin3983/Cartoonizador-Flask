@@ -2,13 +2,11 @@
 import os
 from datetime import datetime
 
-# === Third-party ===
 import cv2
 from flask import Flask, render_template, request, jsonify, send_file, url_for, flash, redirect
 from werkzeug.utils import secure_filename
 from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 # === Flask Config ===
 app = Flask(__name__)
@@ -70,13 +68,13 @@ def image_details(filename):
     Display details of the uploaded image.
     """
     session = Session()
-    imagem = session.query(ProcessedImage).filter_by(filename=filename).first()
+    image = session.query(ProcessedImage).filter_by(filename=filename).first()
     session.close()
 
-    if not imagem:
-        return "Imagem não encontrada", 404
+    if not image:
+        return "Image not found", 404
 
-    return render_template('detalhe_imagem.html', imagem=imagem)
+    return render_template('image_detail.html', image=image)
 
 @app.route('/cartooned/<filename>')
 def cartooned_file(filename):
@@ -147,7 +145,7 @@ def upload_image():
     session.commit()
     session.close()
 
-    flash('Imagem enviada com sucesso!')
+    flash('Image uploaded successfully!')
     return redirect(url_for('index'))
 
 @app.route('/image')
@@ -158,7 +156,7 @@ def imagens():
     session = Session()
     imagens = session.query(ProcessedImage).order_by(ProcessedImage.id.desc()).all()
     session.close()
-    return render_template('galeria.html', imagens=imagens)
+    return render_template('gallery.html', imagens=imagens)
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

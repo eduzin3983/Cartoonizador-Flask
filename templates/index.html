@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +8,30 @@
 </head>
 <body>
 
-    <!-- Vídeo de fundo -->
+    <!-- Background video -->
     <video autoplay muted loop playsinline preload="auto" class="bg-video">
-        <source src="/static/fundo/background.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos em HTML5.
+        <source src="/static/background/background.mp4" type="video/mp4">
+        Your browser does not support HTML5 videos.
     </video>
 
-    <!-- Conteúdo -->
+    <!-- Content -->
     <div class="container centralizado">
-        <h2>Faça o Upload de uma Imagem!</h2>
+        <h2>Upload an Image!</h2>
 
         <p class="inline-text">
-            Acesse as imagens já gravadas!
-            <a href="/image">Acesse Aqui!</a>
+            View previously uploaded images!
+            <a href="/image">Click Here!</a>
         </p>
         
         <form action="/upload" method="post" enctype="multipart/form-data">
-            <!-- Botão de upload com ícone -->
+            <!-- Upload button with icon -->
             <label for="file-upload" class="custom-file-upload">
                 <img src="/static/icons/upload.png" alt="Upload" class="upload-icon">
-                Escolher imagem
+                Choose Image
             </label>
             <input id="file-upload" type="file" name="image" accept="image/*" />
 
-            <!-- Nome do arquivo -->
+            <!-- File name -->
             <p id="file-name"></p>
             
             {% with messages = get_flashed_messages() %}
@@ -42,7 +42,7 @@
                 {% endif %}
             {% endwith %}
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
 
